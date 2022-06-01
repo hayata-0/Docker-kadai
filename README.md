@@ -19,7 +19,7 @@ docker run -p 8080:80 -d hayata/httpd
 
 
 ### エラーが出て詰まった部分
-##### Dockerfileで「FROM centos」と記述するとcentos8系がインストールされ、 httpd のインストールに失敗するということが起きました。
+##### Dockerfileで「FROM centos」と記述するとcentos8系がインストールされ、httpdのインストールに失敗するということが起きました。
 * 対処法
 Dockerfileの中身を
 ```html
@@ -34,3 +34,29 @@ FROM centos:centos7
 * Qiita参考記事↓
 
 `https://qiita.com/shundayo/items/4ae35930fe9f85f535b0`
+
+### 主なDockerコマンド
+＊ イメージをダウンロードする
+```html
+docker pull イメージ名
+```
+
+* イメージからコンテナを作り出して動かすコマンド
+```html
+docker run イメージ名
+```
+
+* イメージが取得できたかを確認
+```html
+sudo docker images
+```
+
+* 実行中のContainer一覧を確認
+```html
+sudo docker ps 
+```
+
+* 終了しているContainer一覧を確認
+```html
+sudo docker ps -a
+```
